@@ -1,0 +1,12 @@
+version: "2.4"
+services:
+  mockServer:
+    image: mockserver/mockserver:mockserver-5.8.0
+    ports:
+      - 1080:1080
+    environment:
+      LOG_LEVEL: "TRACE"
+      SERVER_PORT: 1080
+      MOCKSERVER_PROXY_AUTHENTICATION_USERNAME: user
+      MOCKSERVER_PROXY_AUTHENTICATION_PASSWORD: pwd
+      JVM_OPTIONS: -Dmockserver.proxyAuthenticationUsername='user' -Dmockserver.proxyAuthenticationPassword='pwd'
